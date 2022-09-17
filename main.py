@@ -18,9 +18,6 @@ zone4 = "Petion-Ville"
 
 def askForMenu():
     input("\nPresser la touche 'ENTER' pour afficher le menu principal ")
-    os.system('clear')
-def clearScreen():
-    os.system('clear')
 
 while 1 :
     choix_menu_principal = menuPrincipal()
@@ -33,14 +30,12 @@ while 1 :
             choix_menu_station = menuStation()
 
             if choix_menu_station == 0 :   # Retour
-                clearScreen()
                 continue
             elif choix_menu_station == 1 : # Enregistrer une nouvelle station
                 choix_zone = choixZone()
 
                #Controle si il n y a pas deja une station enregistrer dans une zone choisie 
                 if choix_zone == 0 :
-                    clearScreen()
                     continue
                 elif choix_zone == 1 and zone1 in dict_station :
                     print("\nL'enregistrement ne peut pas etre effectue, une station a ete deja enregistree a Lalue! ")
@@ -156,7 +151,6 @@ while 1 :
             choix_menu_commande = menuCommande()
 
             if choix_menu_commande == 0 :   # Retour
-                clearScreen()
                 continue
             elif choix_menu_commande == 1 : # Generer et enregistrer une commande
                 commande_en_attente = False
@@ -198,7 +192,6 @@ while 1 :
             choix_menu_approvisionnement = menuApprovisionnement()
 
             if choix_menu_approvisionnement == 0 :  # Retour
-                clearScreen()
                 continue
             elif choix_menu_approvisionnement == 1 : # Enregistrer et lancer un approvisionnement
                 if not liste_commande:
@@ -256,7 +249,6 @@ while 1 :
                 choix_de_la_station = choixZone()
                 match choix_de_la_station :
                     case 0 :
-                        clearScreen()
                         continue
                     case 1 :
                         nom_station = zone1
